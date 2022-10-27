@@ -1,4 +1,5 @@
 /* This is a stub for the Cafe class */
+import java.util.ArrayList;
 public class Cafe {
 
     public Cafe() {
