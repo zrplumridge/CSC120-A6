@@ -4,7 +4,6 @@ import java.util.Hashtable;
 public class Library extends Building{
 
   private Hashtable<String, Boolean> collection = new Hashtable <String, Boolean>();
-  int nFloors;
 
   public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
