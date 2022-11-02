@@ -20,17 +20,19 @@ public class House extends Building {
   }
 
   public int nResidents() {
-    //System.out.println(residents.getLength());
+    System.out.println(residents.size() + " current residents");
+    nResidents = residents.size();
     return nResidents;
   }
 
   public void moveIn(String name){
     residents.add(name);
-    this.nResidents += 1;
+    this.nResidents();
   }
 
   public String moveOut(String name){
     residents.remove(name);
+    this.nResidents();
 
     //return name of person who moved out
     return name;
