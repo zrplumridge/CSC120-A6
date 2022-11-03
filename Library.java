@@ -1,5 +1,13 @@
-/* This is a stub for the Library class */
+/* 
+ * Library class
+ * Assignment 6
+ * 
+ * Library is child of building
+ * includes methods to add and remove books from inventory and to check out or return books
+ * @author Zoe Plumridge
+ */
 import java.util.Hashtable;
+
 
 public class Library extends Building{
 

@@ -1,4 +1,11 @@
-/* This is a stub for the House class */
+/* 
+ * House class
+ * Assignment 6
+ * 
+ * House is child of building
+ * includes move in and move out functions
+ * @author Zoe Plumridge
+ */
 import java.util.ArrayList;
 public class House extends Building {
 
