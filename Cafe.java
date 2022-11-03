@@ -1,5 +1,4 @@
 /* This is a stub for the Cafe class */
-import java.util.ArrayList;
 public class Cafe extends Building {
 
     private int nCoffeeOunces; // The number of ounces of coffee remaining in inventory
@@ -17,10 +16,40 @@ public class Cafe extends Building {
     }
 
     public void sellCoffee(int size, int nSugarPackets, int nCreams){
-        nCoffeeOunces = nCoffeeOunces - size;
-        nSugarPackets = nSugarPackets - this.nSugarPackets;
-        nCreams = nCreams - this.nCreams;
+        //check for coffee and restock if necessary, then serve
+        if (this.nCoffeeOunces < size){
+            restock(100, 0, 0, 0);
+        }
+        this.nCoffeeOunces = this.nCoffeeOunces - size;
+
+        //check sugar
+        if (this.nSugarPackets < nSugarPackets){
+            restock(0, 10, 0, 0);
+        }
+        this.nSugarPackets = this.nSugarPackets - nSugarPackets;
+
+        //check creams
+        if (this.nCreams < nCreams){
+            restock(0, 0, 30, 0);
+        }
+        this.nCreams = this.nCreams - nCreams;
+
+        //check cups
+        if (nCups < 1){
+            restock(0, 0, 0, 5);
+        }
+        this.nCups = this.nCups - 1;
+
+       
+
         //be clear about which variables refer to what!
+    }
+
+    private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
+        this.nCoffeeOunces = this.nCoffeeOunces + nCoffeeOunces;
+        this.nSugarPackets = this.nSugarPackets + nSugarPackets;
+        this.nCreams = this.nCreams + nCreams;
+        this.nCups = this.nCups + nCups;
     }
     
     public static void main(String[] args) {
